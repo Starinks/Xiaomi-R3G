@@ -19,3 +19,11 @@
 sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
+# 删除旧主题
+rm -rf package/lean/luci-theme-argon
+
+# 下载新主题
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
+#Argon 主题配置插件
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
